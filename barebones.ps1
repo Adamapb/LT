@@ -1,4 +1,6 @@
-	Write-Warning "Configuring network settings..."
+
+
+Write-Warning "Configuring network settings..."
 	Start-Sleep -s 1
 	cd 'C:\Student LT\'
 	#DNS-
