@@ -133,7 +133,7 @@
 		
 		Write-Warning "Creating users..."
 		Start-Sleep -s 1
-		$Password1 = ConvertTo-SecureString P@$$w0rd! -AsPlainText -Force
+		$Password1 = ConvertTo-SecureString password -AsPlainText -Force
 		New-LocalUser "Intern" -Password $Password1 -FullName "Intern User" -Description "The user intern account. Change pass."
 		Add-LocalGroupMember -Group "Administrators" -Member "Intern"
 		
@@ -146,10 +146,16 @@
 		
 		Remove-LocalUser -Name "Test"
 		
+		#Write-Warning "Disabling pesky firewall notifications..."
+		#Set-ItemProperty -Path "$REG_LOCATION" -Name "$REG_KEY" -Type $TYPE -Value $VALUE
+
+		#Set-ItemProperty -Path "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" -Name "DisableEnhancedNotifications" -Type DWord -Value 1
+		#HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications : DisableNotifications
+		
 		Write-Host "Remember to sign in as Administrator and set Intern's password to expire."
 
+		#lusrmgr.msc
 		
-		lusrmgr.msc
 		}else {
 			Write-Warning "Please connect to Wi-Fi"
 		}
