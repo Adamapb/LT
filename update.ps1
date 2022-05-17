@@ -1,4 +1,4 @@
-Write-Warning "Configuring network settings..."
+	Write-Warning "Configuring network settings..."
 	Start-Sleep -s 1
 	cd 'C:\LT-main\LT-main'
 	#DNS-
@@ -146,6 +146,7 @@ Write-Warning "Configuring network settings..."
 		
 		Remove-LocalUser -Name "Test"
 		
+		Write-Host "Remember to sign in as Administrator and set Intern's password to expire."
 
 		
 		lusrmgr.msc
